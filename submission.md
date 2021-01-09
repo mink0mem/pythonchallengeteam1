@@ -10,16 +10,12 @@ Python challenge submission for team 1
 
 import random
 
-#User prompts to determine variables
-user_range1 = input(" Choose the starting value of your range: ")
+user_range1 = input(" Choose the starting value of your range: ") 
 user_range2 = input(" Choose the ending value of your range: ")
 
-#Converting values to integers
 user_range1 = int(user_range1)
 user_range2 = int(user_range2)
 
-
-#Computer generating random number
 if user_range1 < user_range2:  #processes the possibility of the starting value being greater than ending value
             comp_guess = random.randint(user_range1, user_range2 + 1) 
 else:
@@ -31,7 +27,24 @@ while True:
             try:
                         guess = input("Guess a number from your chosen range: ")
                         
-                        if guess.isdigit():
+                        import random
+                        
+                        user_range1 = input(" Choose the starting value of your range: ") 
+                        user_range2 = input(" Choose the ending value of your range: ") 
+                        
+                        user_range1 = int(user_range1) 
+                        user_range2 = int(user_range2) 
+                        
+                        if user_range1 < user_range2:  #processes the possibility of the starting value being greater than ending value 
+                              comp_guess = random.randint(user_range1, user_range2 + 1) 
+                              
+                        else: 
+                        comp_guess = random.randint(user_range2, user_range1 + 1)  
+                        
+                        #Processing user guesses 
+                        while True: 
+                              try: 
+                                    guess = input("Guess a number from your chosen range: ")if guess.isdigit():
                                     guess = int(guess)
                                     if guess == comp_guess:
                                                 print("Congratulations! You guessed the number")
